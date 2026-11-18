@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Mandarin Steps</string>
+    <string name="widget_name">Mandarin Steps</string>
+    <string name="widget_desc">Learn 5 Mandarin words or phrases per session, at your own pace</string>
+    <string name="session_of">Session %1$d of %2$d</string>
+    <string name="stats_line">%1$d / %2$d sessions done  ·  🔥 %3$d-day streak</string>
+    <string name="listen">🔊 Listen</string>
+    <string name="speak">🎤 Speak</string>
+    <string name="say_it">Say: %1$s</string>
+    <string name="great">✓ Great! We heard: %1$s</string>
+    <string name="heard">We heard: %1$s. Try again, or mark it correct if it was right.</string>
+    <string name="mark_ok">It was right ✓</string>
+    <string name="marked_ok">✓ Marked as spoken</string>
+    <string name="no_speech">Speech input is not available. Install or update the Google app, then add Chinese (Mandarin) in its voice settings.</string>
+    <string name="prev">◀</string>
+    <string name="next">▶</string>
+    <string name="play_all">▶ Play all</string>
+    <string name="finish_n">Finish ✓ (%1$d/%2$d spoken)</string>
+    <string name="session_done">Session %1$d complete! 🎉</string>
+    <string name="my_progress">My progress</string>
+    <string name="p_sessions">Sessions: %1$d of %2$d</string>
+    <string name="p_words">Words and phrases practised: %1$d of %2$d</string>
+    <string name="p_streak">Streak: %1$d days  (best %2$d)</string>
+    <string name="p_today">Sessions today: %1$d</string>
+    <string name="go_next">Next: session %1$d</string>
+    <string name="stay">Stay here</string>
+    <string name="lvl_basics">Stage 1: greetings, numbers and basics</string>
+    <string name="lvl_sentences">Stage 2: everyday phrases</string>
+    <string name="lvl_hsk">Stage 3: %1$s</string>
+    <string name="m_goto">Go to session…</string>
+    <string name="m_progress">My progress</string>
+    <string name="m_speed">Speaking speed</string>
+    <string name="m_pinyin">Show or hide pinyin</string>
+    <string name="m_about">About and credits</string>
+    <string-array name="speeds">
+        <item>Slow</item>
+        <item>Relaxed (default)</item>
+        <item>Normal</item>
+    </string-array>
+    <string name="no_voice_title">Chinese voice needed</string>
+    <string name="no_voice_msg">To hear the words, install the Chinese (Mandarin) voice for your phone\'s text-to-speech (Settings → General management → Text-to-speech, or Google Speech Services).</string>
+    <string name="install">Install voice</string>
+    <string name="later">Later</string>
+    <string name="about_text">1000 sessions of 5 words or phrases.
+
+Sessions 1–59: a starter course of greetings, numbers, travel and everyday phrases, with a review every 7th session.
+
+Sessions 60–1000: HSK vocabulary from level 1 (beginner) through level 5 and into level 6, most common words first, with reviews.
+
+Vocabulary: complete-hsk-vocabulary by Yanis Zafirópulos (MIT licence), based on CC-CEDICT.
+
+Listening uses your phone\'s text-to-speech; speaking uses Google speech recognition.</string>
+    <string name="w_session">Session %1$d / %2$d</string>
+    <string name="w_progress">%1$d / %2$d sessions</string>
+    <string name="w_start">Start ▸</string>
+</resources>

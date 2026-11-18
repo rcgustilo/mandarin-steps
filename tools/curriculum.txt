@@ -1,0 +1,306 @@
+#Greetings
+你好|nǐ hǎo|Hello
+您好|nín hǎo|Hello (polite)
+早上好|zǎoshang hǎo|Good morning
+晚上好|wǎnshang hǎo|Good evening
+晚安|wǎn'ān|Good night
+#Thanks and sorry
+谢谢|xièxie|Thank you
+不客气|bú kèqi|You're welcome
+对不起|duìbuqǐ|I'm sorry
+没关系|méi guānxi|It doesn't matter / That's OK
+不好意思|bù hǎoyìsi|Excuse me / Sorry (mild)
+#Goodbyes
+再见|zàijiàn|Goodbye
+明天见|míngtiān jiàn|See you tomorrow
+一会儿见|yíhuìr jiàn|See you in a bit
+下次见|xià cì jiàn|See you next time
+慢走|màn zǒu|Take care (to a leaving guest)
+#Yes, no and basics
+是|shì|Yes / to be
+不是|bú shì|No / is not
+对|duì|Correct / right
+好的|hǎo de|OK / sure
+请|qǐng|Please
+#Introducing yourself
+我叫___|wǒ jiào ___|My name is ___
+你叫什么名字？|nǐ jiào shénme míngzi?|What is your name?
+很高兴认识你|hěn gāoxìng rènshi nǐ|Nice to meet you
+我是菲律宾人|wǒ shì Fēilǜbīn rén|I am Filipino
+你是哪国人？|nǐ shì nǎ guó rén?|Which country are you from?
+#How are you
+你好吗？|nǐ hǎo ma?|How are you?
+我很好|wǒ hěn hǎo|I'm fine
+你呢？|nǐ ne?|And you?
+还可以|hái kěyǐ|Not bad
+有点累|yǒudiǎn lèi|A bit tired
+#Numbers 1–5
+一|yī|one
+二|èr|two
+三|sān|three
+四|sì|four
+五|wǔ|five
+#Numbers 6–10
+六|liù|six
+七|qī|seven
+八|bā|eight
+九|jiǔ|nine
+十|shí|ten
+#Bigger numbers
+十一|shíyī|eleven
+二十|èrshí|twenty
+一百|yìbǎi|one hundred
+一千|yìqiān|one thousand
+一万|yíwàn|ten thousand
+#People
+我|wǒ|I / me
+你|nǐ|you
+他|tā|he / him
+她|tā|she / her
+我们|wǒmen|we / us
+#Family
+爸爸|bàba|dad
+妈妈|māma|mom
+哥哥|gēge|older brother
+姐姐|jiějie|older sister
+孩子|háizi|child
+#Questions
+什么|shénme|what
+谁|shéi|who
+哪里|nǎlǐ|where
+什么时候|shénme shíhou|when
+为什么|wèishénme|why
+#Classroom phrases
+我不懂|wǒ bù dǒng|I don't understand
+请再说一遍|qǐng zài shuō yí biàn|Please say it again
+请说慢一点|qǐng shuō màn yìdiǎn|Please speak more slowly
+这个用中文怎么说？|zhège yòng Zhōngwén zěnme shuō?|How do you say this in Chinese?
+我会说一点中文|wǒ huì shuō yìdiǎn Zhōngwén|I can speak a little Chinese
+#Days
+今天|jīntiān|today
+明天|míngtiān|tomorrow
+昨天|zuótiān|yesterday
+星期一|xīngqīyī|Monday
+周末|zhōumò|weekend
+#Time
+现在几点？|xiànzài jǐ diǎn?|What time is it now?
+三点|sān diǎn|three o'clock
+半|bàn|half (past)
+早上|zǎoshang|morning
+晚上|wǎnshang|evening
+#Food words
+米饭|mǐfàn|cooked rice
+面条|miàntiáo|noodles
+鸡肉|jīròu|chicken (meat)
+鱼|yú|fish
+蔬菜|shūcài|vegetables
+#Drinks
+水|shuǐ|water
+茶|chá|tea
+咖啡|kāfēi|coffee
+牛奶|niúnǎi|milk
+果汁|guǒzhī|juice
+#At a restaurant
+菜单|càidān|menu
+我要这个|wǒ yào zhège|I want this one
+服务员|fúwùyuán|waiter / waitress
+买单|mǎidān|The bill, please
+很好吃|hěn hǎochī|Delicious
+#Likes
+我喜欢___|wǒ xǐhuan ___|I like ___
+我不喜欢___|wǒ bù xǐhuan ___|I don't like ___
+你喜欢什么？|nǐ xǐhuan shénme?|What do you like?
+我爱你|wǒ ài nǐ|I love you
+没问题|méi wèntí|No problem
+#Shopping
+多少钱？|duōshao qián?|How much is it?
+太贵了|tài guì le|Too expensive
+便宜一点|piányi yìdiǎn|A bit cheaper, please
+我买这个|wǒ mǎi zhège|I'll buy this
+可以刷卡吗？|kěyǐ shuā kǎ ma?|Can I pay by card?
+#Money
+块|kuài|yuan (spoken)
+元|yuán|yuan
+钱|qián|money
+现金|xiànjīn|cash
+找钱|zhǎo qián|to give change
+#Directions
+在哪里？|zài nǎlǐ?|Where is it?
+左边|zuǒbian|left side
+右边|yòubian|right side
+一直走|yìzhí zǒu|Go straight
+很近|hěn jìn|very close
+#Places
+厕所|cèsuǒ|toilet
+医院|yīyuàn|hospital
+机场|jīchǎng|airport
+酒店|jiǔdiàn|hotel
+超市|chāoshì|supermarket
+#Transport
+出租车|chūzūchē|taxi
+地铁|dìtiě|subway
+公共汽车|gōnggòng qìchē|bus
+火车|huǒchē|train
+飞机|fēijī|airplane
+#Taking a taxi
+请到这个地址|qǐng dào zhège dìzhǐ|Please go to this address
+停这里|tíng zhèlǐ|Stop here
+要多长时间？|yào duō cháng shíjiān?|How long will it take?
+快一点|kuài yìdiǎn|A bit faster, please
+谢谢师傅|xièxie shīfu|Thank you, driver
+#Weather
+天气|tiānqì|weather
+很热|hěn rè|very hot
+很冷|hěn lěng|very cold
+下雨|xià yǔ|to rain
+晴天|qíngtiān|sunny day
+#Colors
+红色|hóngsè|red
+蓝色|lánsè|blue
+绿色|lǜsè|green
+白色|báisè|white
+黑色|hēisè|black
+#Body and health
+头疼|tóu téng|headache
+我不舒服|wǒ bù shūfu|I don't feel well
+医生|yīshēng|doctor
+药|yào|medicine
+休息|xiūxi|to rest
+#Help
+救命！|jiùmìng!|Help!
+帮帮我|bāngbang wǒ|Please help me
+我迷路了|wǒ mílù le|I'm lost
+请叫警察|qǐng jiào jǐngchá|Please call the police
+小心！|xiǎoxīn!|Careful!
+#Work
+工作|gōngzuò|work / job
+公司|gōngsī|company
+老师|lǎoshī|teacher
+工程师|gōngchéngshī|engineer
+学生|xuésheng|student
+#Home
+家|jiā|home / family
+房间|fángjiān|room
+门|mén|door
+桌子|zhuōzi|table
+床|chuáng|bed
+#Daily actions
+吃饭|chī fàn|to eat (a meal)
+喝水|hē shuǐ|to drink water
+睡觉|shuìjiào|to sleep
+起床|qǐchuáng|to get up
+洗澡|xǐzǎo|to take a bath / shower
+#More actions
+去|qù|to go
+来|lái|to come
+看|kàn|to look / to watch
+听|tīng|to listen
+说|shuō|to speak / to say
+#Phone and internet
+手机|shǒujī|mobile phone
+电话号码|diànhuà hàomǎ|phone number
+微信|Wēixìn|WeChat
+上网|shàngwǎng|to go online
+密码|mìmǎ|password
+#Hobbies
+看书|kàn shū|to read books
+听音乐|tīng yīnyuè|to listen to music
+运动|yùndòng|to exercise / sports
+旅游|lǚyóu|to travel
+看电影|kàn diànyǐng|to watch a movie
+#Feelings
+开心|kāixīn|happy
+难过|nánguò|sad
+生气|shēngqì|angry
+累|lèi|tired
+饿|è|hungry
+#Describing things
+大|dà|big
+小|xiǎo|small
+多|duō|many / much
+少|shǎo|few / little
+新|xīn|new
+#Want and can
+我想___|wǒ xiǎng ___|I would like to ___
+我要___|wǒ yào ___|I want ___
+我会___|wǒ huì ___|I can (know how to) ___
+可以吗？|kěyǐ ma?|Is it OK? / May I?
+不可以|bù kěyǐ|Not allowed
+#Have and don't have
+有|yǒu|to have / there is
+没有|méiyǒu|don't have / there isn't
+你有___吗？|nǐ yǒu ___ ma?|Do you have ___?
+有没有？|yǒu méiyǒu?|Is there or not?
+都有|dōu yǒu|There are all kinds
+#Months and dates
+一月|yīyuè|January
+十二月|shí'èryuè|December
+几月几号？|jǐ yuè jǐ hào?|What is the date?
+生日|shēngrì|birthday
+生日快乐|shēngrì kuàilè|Happy birthday
+#Celebrations
+新年快乐|xīnnián kuàilè|Happy New Year
+春节|Chūnjié|Spring Festival (Chinese New Year)
+恭喜发财|gōngxǐ fācái|Wishing you prosperity
+红包|hóngbāo|red envelope (gift money)
+干杯！|gānbēi!|Cheers!
+#Polite requests
+请问|qǐngwèn|Excuse me, may I ask
+请坐|qǐng zuò|Please sit
+请进|qǐng jìn|Please come in
+请等一下|qǐng děng yíxià|Please wait a moment
+麻烦你了|máfan nǐ le|Sorry to trouble you / thanks
+#Hotel
+我有预订|wǒ yǒu yùdìng|I have a reservation
+护照|hùzhào|passport
+钥匙|yàoshi|key
+退房|tuìfáng|to check out
+有空房吗？|yǒu kòngfáng ma?|Are there any vacant rooms?
+#Making plans
+你有空吗？|nǐ yǒu kòng ma?|Are you free?
+我们一起去吧|wǒmen yìqǐ qù ba|Let's go together
+几点见？|jǐ diǎn jiàn?|What time shall we meet?
+不见不散|bú jiàn bú sàn|Be there or be square
+等等我|děngdeng wǒ|Wait for me
+#Opinions
+我觉得___|wǒ juéde ___|I think ___
+真的吗？|zhēn de ma?|Really?
+当然|dāngrán|Of course
+可能|kěnéng|maybe / possibly
+我同意|wǒ tóngyì|I agree
+#Learning Chinese
+中文|Zhōngwén|Chinese language
+汉字|Hànzì|Chinese characters
+拼音|pīnyīn|pinyin
+声调|shēngdiào|tone
+练习|liànxí|to practise
+#Time words
+已经|yǐjīng|already
+还没|hái méi|not yet
+马上|mǎshàng|right away
+以后|yǐhòu|later / afterwards
+以前|yǐqián|before / previously
+#Frequency
+每天|měitiān|every day
+常常|chángcháng|often
+有时候|yǒu shíhou|sometimes
+从来不|cónglái bù|never
+一次|yí cì|once
+#Linking words
+和|hé|and
+但是|dànshì|but
+因为|yīnwèi|because
+所以|suǒyǐ|so / therefore
+如果|rúguǒ|if
+#Everyday sentences 1
+我在学中文|wǒ zài xué Zhōngwén|I am studying Chinese
+我住在甲米地|wǒ zhù zài Jiǎmǐdì|I live in Cavite
+我今天很忙|wǒ jīntiān hěn máng|I'm busy today
+他是我的朋友|tā shì wǒ de péngyou|He is my friend
+我饿了|wǒ è le|I'm hungry
+#Everyday sentences 2
+你在做什么？|nǐ zài zuò shénme?|What are you doing?
+我们走吧|wǒmen zǒu ba|Let's go
+我不知道|wǒ bù zhīdào|I don't know
+你说得对|nǐ shuō de duì|You're right
+加油！|jiāyóu!|Keep going! / You can do it!
