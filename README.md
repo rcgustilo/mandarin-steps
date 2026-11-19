@@ -14,3 +14,12 @@ An Android app and home-screen widget for learning Mandarin Chinese at your own 
 The APK is built automatically by GitHub Actions. To download it, open the **Releases** page and get `MandarinSteps.apk`.
 
 Vocabulary comes from [complete-hsk-vocabulary](https://github.com/drkameleon/complete-hsk-vocabulary) (MIT licence). To rebuild `app/src/main/assets/sessions.tsv`, run `tools/gen_data.py`.
+
+## iPhone / iPad version
+
+The `docs/` folder holds a web-app version that installs on iPhone from Safari (no App Store needed). It works offline after the first visit and keeps progress on the phone.
+
+1. Open https://rcgustilo.github.io/mandarin-steps/ in **Safari**.
+2. Tap **Share** → **Add to Home Screen**.
+
+For audio, the iPhone needs a Chinese voice: Settings → Accessibility → Spoken Content → Voices → Chinese.

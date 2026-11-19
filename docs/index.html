@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#C0392B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Mandarin">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<title>Mandarin Steps</title>
+<style>
+:root{
+  --bg:#FAF7F2; --card:#FFFFFF; --ink:#1F1B18; --muted:#6E655C; --line:#E7E0D6;
+  --accent:#C0392B; --accent-ink:#FFFFFF; --ok:#2E7D4F; --okbg:#E6F2EA; --warn:#9A5B00; --warnbg:#FBF0DE;
+  --chip:#F2ECE3;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#16130F; --card:#221E19; --ink:#F2ECE3; --muted:#A99F93; --line:#3A332B;
+    --accent:#E0646C; --accent-ink:#1A0E0F; --ok:#7CC79A; --okbg:#1E3326; --warn:#E9B562; --warnbg:#382A14; --chip:#2C2620; }
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+.wrap{max-width:760px;margin:0 auto;padding:12px 14px 120px}
+header{display:flex;align-items:center;gap:10px;padding:6px 0 10px}
+.logo{width:36px;height:36px;border-radius:10px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:700;font-size:18px}
+header h1{font-size:18px;margin:0;flex:1}
+.iconbtn{padding:8px 10px;border-radius:10px;background:var(--chip)}
+.top{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sess{font-size:13px;color:var(--muted)}
+.topic{font-size:20px;font-weight:650;margin:2px 0 8px}
+.bar{height:8px;border-radius:99px;background:var(--chip);overflow:hidden;flex:1;min-width:120px}
+.bar>i{display:block;height:100%;background:var(--accent);width:0}
+.stat{font-size:13px;color:var(--muted)}
+.nav{display:flex;gap:8px;margin-top:10px}
+.btn{padding:10px 14px;border-radius:12px;background:var(--chip);font-weight:600}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn:disabled{opacity:.45;cursor:default}
+.cards{display:grid;gap:10px}
+@media (min-width:640px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;position:relative}
+.card.done{border-color:var(--ok)}
+.num{position:absolute;top:10px;right:12px;font-size:12px;color:var(--muted)}
+.jp{font-size:26px;font-weight:600;line-height:1.25;margin-right:26px;word-break:keep-all;overflow-wrap:anywhere}
+.reading{font-size:15px;color:var(--muted);margin-top:2px}
+.romaji{font-size:15px;color:var(--accent);margin-top:2px}
+.meaning{font-size:16px;margin-top:6px}
+.acts{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.acts .btn{padding:8px 11px;font-size:14px}
+.fb{margin-top:8px;font-size:14px;border-radius:10px;padding:8px 10px;display:none}
+.fb.show{display:block}
+.fb.ok{background:var(--okbg);color:var(--ok)}
+.fb.no{background:var(--warnbg);color:var(--warn)}
+.hidden-mean .meaning{filter:blur(6px)}
+.hidden-mean .meaning:active{filter:none}
+.dock{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(transparent,var(--bg) 30%);padding:18px 14px calc(14px + env(safe-area-inset-bottom))}
+.dock .in{max-width:760px;margin:0 auto;display:flex;gap:8px}
+.dock .btn{flex:1;padding:14px;font-size:16px}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-end;justify-content:center;z-index:10}
+.overlay.show{display:flex}
+.sheet{background:var(--card);width:100%;max-width:560px;border-radius:20px 20px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom));max-height:88vh;overflow:auto}
+@media (min-width:640px){.overlay{align-items:center}.sheet{border-radius:20px}}
+.sheet h2{margin:0 0 8px;font-size:20px}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+.kpi{background:var(--chip);border-radius:12px;padding:10px}
+.kpi b{display:block;font-size:22px}
+.kpi span{font-size:12px;color:var(--muted)}
+.hist{display:flex;align-items:flex-end;gap:3px;height:70px;margin:8px 0 4px}
+.hist i{flex:1;background:var(--accent);border-radius:3px 3px 0 0;min-height:2px;opacity:.85}
+.hist i.zero{background:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(20,1fr);gap:2px;margin-top:8px}
+.grid i{aspect-ratio:1;border-radius:2px;background:var(--line)}
+.grid i.d{background:var(--ok)}
+.grid i.c{outline:2px solid var(--accent)}
+label.opt{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+input[type=number]{font:inherit;width:110px;padding:8px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+select{font:inherit;padding:6px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.small{font-size:13px;color:var(--muted)}
+.listening{animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.55}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">中</div>
+    <h1>Mandarin Steps</h1>
+    <button class="iconbtn" id="bProgress" aria-label="My progress">📊</button>
+    <button class="iconbtn" id="bSettings" aria-label="Settings">⚙️</button>
+  </header>
+
+  <div class="top" id="installTip" style="display:none"><b>Install on your iPhone:</b> tap the <b>Share</b> button <span aria-hidden="true">⬆️</span> in Safari, then <b>Add to Home Screen</b>. The app then opens full-screen and works offline. <button class="btn" id="bTipClose" style="margin-left:6px;padding:6px 10px">OK</button></div>
+
+  <section class="top">
+    <div class="sess" id="sessLabel">Session 1 of 1000</div>
+    <div class="topic" id="topic">Loading…</div>
+    <div class="row"><div class="bar"><i id="barFill"></i></div><span class="stat" id="pct">0%</span></div>
+    <div class="row" style="margin-top:6px"><span class="stat" id="streak">🔥 0-day streak</span><span class="stat">·</span><span class="stat" id="doneCount">0 sessions done</span></div>
+    <div class="nav">
+      <button class="btn" id="bPrev">‹ Prev</button>
+      <button class="btn" id="bGo">Go to…</button>
+      <button class="btn" id="bNext">Next ›</button>
+    </div>
+  </section>
+
+  <div class="cards" id="cards"></div>
+  <p class="small" id="micNote" style="margin-top:12px"></p>
+</div>
+
+<div class="dock"><div class="in">
+  <button class="btn" id="bPlayAll">▶ Play all</button>
+  <button class="btn primary" id="bFinish">Finish session ✓</button>
+</div></div>
+
+<div class="overlay" id="ovProgress"><div class="sheet" id="progSheet"></div></div>
+<div class="overlay" id="ovSettings"><div class="sheet">
+  <h2>Settings</h2>
+  <label class="opt">Show pinyin <input type="checkbox" id="optRomaji"></label>
+  <label class="opt">Hide meaning (tap to reveal) <input type="checkbox" id="optHide"></label>
+  <label class="opt">Speaking speed
+    <select id="optRate"><option value="0.6">Slow</option><option value="0.75">Normal-slow</option><option value="1">Normal</option></select></label>
+  <label class="opt">Chinese voice <select id="optVoice"></select></label>
+  <p class="small" id="voiceNote"></p>
+  <div class="row" style="margin-top:12px">
+    <button class="btn" id="bReset">Reset progress</button>
+    <button class="btn primary" id="bCloseSettings" style="margin-left:auto">Done</button>
+  </div>
+</div></div>
+<div class="overlay" id="ovGo"><div class="sheet">
+  <h2>Go to session</h2>
+  <div class="row"><input type="number" id="goNum" min="1" max="1000" value="1"><button class="btn primary" id="bGoOk">Go</button></div>
+  <p class="small">Sessions 1–59 are the starter course. From 60 onward you build HSK 1 → HSK 6 vocabulary, most common words first. Every 7th session is a review.</p>
+  <div class="row"><button class="btn" id="bGoNext">First unfinished</button><button class="btn" id="bGoClose" style="margin-left:auto">Close</button></div>
+</div></div>
+
+<script>
+(function(){
+"use strict";
+var TOTAL=1000, DATA=null;
+var KEY="mandarinSteps.v1";
+var P=load();
+function load(){
+  var d={current:1,done:{},streak:0,best:0,lastDay:"",hist:{},rate:0.75,romaji:true,hide:false,voice:"",checks:{}};
+  try{var s=localStorage.getItem(KEY); if(s){var o=JSON.parse(s); for(var k in o) d[k]=o[k];}}catch(e){}
+  return d;
+}
+function save(){ try{localStorage.setItem(KEY,JSON.stringify(P));}catch(e){} }
+function today(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function dayDiff(a,b){return Math.round((new Date(b)-new Date(a))/864e5);}
+function doneCount(){return Object.keys(P.done).length;}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+/* ---------- speech out ---------- */
+var voices=[];
+function loadVoices(){
+  if(!("speechSynthesis" in window)) return;
+  voices=speechSynthesis.getVoices().filter(function(v){return /^(zh|cmn)/i.test(v.lang);});
+  var sel=$("optVoice"); sel.innerHTML="";
+  if(!voices.length){ sel.innerHTML='<option value="">(none found)</option>';
+    $("voiceNote").textContent="No Chinese voice found. On iPhone: Settings → Accessibility → Spoken Content → Voices → Chinese (China mainland) and download a voice such as Tingting, then reopen the app.";
+  } else {
+    voices.forEach(function(v){var o=document.createElement("option");o.value=v.name;o.textContent=v.name;sel.appendChild(o);});
+    var pref=voices.filter(function(v){return /zh[-_]CN/i.test(v.lang);})[0]; if(P.voice) sel.value=P.voice; else if(pref) sel.value=pref.name; $("voiceNote").textContent="";
+  }
+}
+if("speechSynthesis" in window){ loadVoices(); speechSynthesis.onvoiceschanged=loadVoices; }
+function speakText(it){ return it[0].replace(/_{2,}/g,"什么").replace(/[（(][^）)]*[）)]/g,""); }
+function say(text,cb){
+  if(!("speechSynthesis" in window)){ if(cb)cb(); return; }
+  var u=new SpeechSynthesisUtterance(text); u.lang="zh-CN"; u.rate=+P.rate||0.75;
+  var v=voices.filter(function(x){return x.name===P.voice;})[0]||voices.filter(function(x){return /zh[-_]CN/i.test(x.lang);})[0]||voices[0]; if(v) u.voice=v;
+  var fired=false; function end(){ if(!fired){fired=true; if(cb)cb();} }
+  u.onend=end; u.onerror=end; setTimeout(end, 4000+text.length*450);
+  speechSynthesis.speak(u);
+}
+var playing=false;
+function playAll(){
+  if(playing){ playing=false; speechSynthesis.cancel(); $("bPlayAll").textContent="▶ Play all"; return; }
+  playing=true; $("bPlayAll").textContent="■ Stop";
+  speechSynthesis.cancel();
+  var items=DATA[P.current-1].w, i=0;
+  (function next(){
+    if(!playing || i>=items.length){ playing=false; $("bPlayAll").textContent="▶ Play all"; hi(-1); return; }
+    hi(i); var it=items[i];
+    say(speakText(it),function(){ setTimeout(function(){ if(!playing)return; say(speakText(it),function(){ i++; setTimeout(next,700); }); },500); });
+  })();
+}
+function hi(i){ var cs=document.querySelectorAll(".card"); cs.forEach(function(c,k){c.style.boxShadow=k===i?"0 0 0 3px var(--accent)":"";}); }
+
+/* ---------- matching (same rules as the Android version) ---------- */
+function stripTones(s){ return s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ü/g,"v"); }
+function norm(s){
+  s=String(s||"").normalize("NFKC").toLowerCase();
+  s=s.replace(/[（(][^）)]*[）)]/g,"");
+  return stripTones(s).normalize("NFC").replace(/[\s，。！？、；：“”‘’「」《》…·,.!?;:'"\-~～_]/g,"");
+}
+function lev(a,b){var m=a.length,n=b.length,d=[];for(var i=0;i<=m;i++){d[i]=[i];}for(var j=0;j<=n;j++)d[0][j]=j;
+  for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+function sim(a,b){ if(!a||!b) return 0; return 1-lev(a,b)/Math.max(a.length,b.length); }
+function matches(heard,it){
+  var h=norm(heard); if(!h) return false;
+  var targets=[it[0],it[1],it[2]].filter(Boolean).map(function(t){return norm(t.replace(/_{2,}/g,""));});
+  return targets.some(function(t){ return t && (h===t || h.indexOf(t)>=0 || (t.length>2 && t.indexOf(h)>=0 && h.length>=t.length*0.6) || sim(h,t)>=0.75); });
+}
+
+/* ---------- speech in (dictation capability) ---------- */
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition, dict=SR?{}:null, rec=null, listeningCard=-1, heardBuf="", partial="";
+if(!SR){ document.addEventListener("DOMContentLoaded",function(){}); }
+function micNote(){ $("micNote").textContent = SR ? "🎤 Speak uses your phone's speech recognition (Mandarin). Allow microphone access when asked." : "Speaking check isn't available in this browser. Say each word aloud and tap “I said it ✓”."; }
+function startListen(k){
+  if(!SR) return;
+  if(listeningCard>=0){ try{rec.stop();}catch(e){} return; }
+  heardBuf=""; partial=""; listeningCard=k; markListening(k); setFb(k,"Listening… say it in Mandarin, then tap ■","");
+  try{ if("speechSynthesis" in window) speechSynthesis.cancel(); }catch(e){}
+  rec=new SR(); rec.lang="zh-CN"; rec.interimResults=true; rec.continuous=false; rec.maxAlternatives=3;
+  rec.onresult=function(e){
+    var fin="", inter="";
+    for(var i=0;i<e.results.length;i++){ if(e.results[i].isFinal) fin+=e.results[i][0].transcript; else inter+=e.results[i][0].transcript; }
+    if(fin) heardBuf=fin; partial=inter;
+    if(listeningCard>=0) setFb(listeningCard,"…"+(heardBuf||partial),"");
+  };
+  rec.onerror=function(ev){
+    var k2=listeningCard; listeningCard=-1; markListening(-1);
+    if(k2>=0) setFb(k2, /not-allowed|service-not-allowed/.test(ev.error) ? "Microphone or speech recognition not allowed. Check Settings → Safari → Microphone (and Siri & Dictation). You can still tap “I said it ✓”." : "Couldn't hear that. Try again.","no");
+  };
+  rec.onend=function(){ if(listeningCard>=0){ var k2=listeningCard; listeningCard=-1; markListening(-1); judge(k2,heardBuf||partial); } };
+  try{ rec.start(); }catch(e){ listeningCard=-1; markListening(-1); setFb(k,"Couldn't start listening. Try again.","no"); }
+  setTimeout(function(){ if(listeningCard===k){ try{rec.stop();}catch(e){} } },7000);
+}
+function judge(k,heard){
+  var it=DATA[P.current-1].w[k];
+  if(!heard){ setFb(k,"I didn't catch anything. Try again a little louder.","no"); return; }
+  if(matches(heard,it)){ setFb(k,"✓ Heard: “"+heard+"” — great!","ok"); check(k,true); }
+  else setFb(k,"Heard: “"+heard+"”. Listen once more and try again, or tap “I said it ✓”.","no");
+}
+function markListening(k){
+  document.querySelectorAll("[data-speak]").forEach(function(b){
+    var on=+b.getAttribute("data-speak")===k; b.classList.toggle("listening",on); b.textContent=on?"■ Stop":"🎤 Speak";
+  });
+}
+function setFb(k,msg,cls){ var el=$("fb"+k); if(!el)return; el.textContent=msg; el.className="fb show "+(cls||""); }
+
+/* ---------- render ---------- */
+function check(k,v){
+  var key=P.current; P.checks[key]=P.checks[key]||[]; P.checks[key][k]=v; save();
+  var c=$("card"+k); if(c) c.classList.toggle("done",!!v);
+}
+function render(){
+  if(!DATA) return;
+  var s=DATA[P.current-1];
+  $("sessLabel").textContent="Session "+P.current+" of "+TOTAL+(P.done[P.current]?" · completed ✓":"");
+  $("topic").textContent=s.t;
+  var dc=doneCount(), pct=(dc/TOTAL*100);
+  $("barFill").style.width=pct+"%"; $("pct").textContent=(pct<10?pct.toFixed(1):Math.round(pct))+"%";
+  $("doneCount").textContent=dc+" session"+(dc===1?"":"s")+" done";
+  $("streak").textContent="🔥 "+liveStreak()+"-day streak";
+  $("bPrev").disabled=P.current<=1; $("bNext").disabled=P.current>=TOTAL;
+  var ch=P.checks[P.current]||[];
+  var html=s.w.map(function(it,k){
+    return '<div class="card'+(ch[k]?' done':'')+'" id="card'+k+'"><span class="num">'+(k+1)+'/'+s.w.length+'</span>'+
+      '<div class="jp" lang="zh-CN">'+esc(it[0])+'</div>'+
+      (it[1]?'<div class="reading" lang="zh-CN">'+esc(it[1])+'</div>':'')+
+      (P.romaji?'<div class="romaji">'+esc(it[2])+'</div>':'')+
+      '<div class="meaning">'+esc(it[3])+'</div>'+
+      '<div class="acts"><button class="btn" data-listen="'+k+'">🔊 Listen</button>'+
+      (dict?'<button class="btn" data-speak="'+k+'">🎤 Speak</button>':'')+
+      '<button class="btn" data-ok="'+k+'">'+(ch[k]?'✓ Done':'I said it ✓')+'</button></div>'+
+      '<div class="fb" id="fb'+k+'"></div></div>';
+  }).join("");
+  var cards=$("cards"); cards.innerHTML=html; cards.classList.toggle("hidden-mean",!!P.hide);
+}
+function liveStreak(){ if(!P.lastDay) return 0; var g=dayDiff(P.lastDay,today()); return g<=1?P.streak:0; }
+
+document.addEventListener("click",function(e){
+  var t=e.target.closest("button"); if(!t) return;
+  var a;
+  if((a=t.getAttribute("data-listen"))!==null){ speechSynthesis&&speechSynthesis.cancel(); playing=false; say(speakText(DATA[P.current-1].w[+a])); }
+  else if((a=t.getAttribute("data-speak"))!==null){ startListen(+a); }
+  else if((a=t.getAttribute("data-ok"))!==null){ var ch=P.checks[P.current]||[]; check(+a,!ch[+a]); t.textContent=!ch[+a]?"I said it ✓":"✓ Done"; render(); }
+});
+function go(n){ n=Math.max(1,Math.min(TOTAL,n|0)); if(playing) playAll(); P.current=n; save(); render(); window.scrollTo(0,0); }
+$("bPrev").onclick=function(){go(P.current-1);};
+$("bNext").onclick=function(){go(P.current+1);};
+$("bPlayAll").onclick=playAll;
+$("bGo").onclick=function(){ $("goNum").value=P.current; show("ovGo"); };
+$("bGoOk").onclick=function(){ go(+$("goNum").value); hide("ovGo"); };
+$("bGoNext").onclick=function(){ for(var i=1;i<=TOTAL;i++) if(!P.done[i]){ go(i); break; } hide("ovGo"); };
+$("bGoClose").onclick=function(){hide("ovGo");};
+$("bFinish").onclick=finish;
+$("bProgress").onclick=function(){ showProgress(false); };
+$("bSettings").onclick=function(){ $("optRomaji").checked=!!P.romaji; $("optHide").checked=!!P.hide; $("optRate").value=String(P.rate); show("ovSettings"); };
+$("bCloseSettings").onclick=function(){ hide("ovSettings"); };
+$("optRomaji").onchange=function(){P.romaji=this.checked;save();render();};
+$("optHide").onchange=function(){P.hide=this.checked;save();render();};
+$("optRate").onchange=function(){P.rate=+this.value;save();};
+$("optVoice").onchange=function(){P.voice=this.value;save(); say("你好");};
+$("bReset").onclick=function(){
+  if(t2reset){ P.done={};P.checks={};P.streak=0;P.best=0;P.lastDay="";P.hist={};P.current=1;save();render();hide("ovSettings");t2reset=false;this.textContent="Reset progress";}
+  else { t2reset=true; this.textContent="Tap again to confirm"; var b=this; setTimeout(function(){t2reset=false;b.textContent="Reset progress";},3000); }
+};
+var t2reset=false;
+document.querySelectorAll(".overlay").forEach(function(o){ o.addEventListener("click",function(e){ if(e.target===o) o.classList.remove("show"); }); });
+function show(id){$(id).classList.add("show");} function hide(id){$(id).classList.remove("show");}
+
+function finish(){
+  var d=today(), first=!P.done[P.current];
+  P.done[P.current]=d;
+  if(P.lastDay!==d){ var g=P.lastDay?dayDiff(P.lastDay,d):99; P.streak=(g===1)?P.streak+1:1; P.lastDay=d; }
+  P.best=Math.max(P.best||0,P.streak);
+  P.hist[d]=(P.hist[d]||0)+1;
+  var keys=Object.keys(P.hist).sort(); while(keys.length>60){ delete P.hist[keys.shift()]; }
+  save(); showProgress(true, first);
+}
+function showProgress(justDone, first){
+  var dc=doneCount(), words=0; for(var k in P.done){ var s=DATA[k-1]; if(s) words+=s.w.length; }
+  var days=[], d=new Date(); for(var i=13;i>=0;i--){ var x=new Date(d); x.setDate(d.getDate()-i);
+    var key=x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0"); days.push(P.hist[key]||0); }
+  var mx=Math.max.apply(null,days.concat([1]));
+  var stage=(DATA[P.current-1]&&DATA[P.current-1].s)||"Starter course";
+  var grid=""; for(var n=1;n<=TOTAL;n++) grid+='<i class="'+(P.done[n]?"d":"")+(n===P.current?" c":"")+'" title="Session '+n+'"></i>';
+  $("progSheet").innerHTML=
+    '<h2>'+(justDone?"🎉 Session "+P.current+" complete!":"My progress")+'</h2>'+
+    (justDone?'<p class="small">'+(first?"Nice work. ":"Reviewed again. ")+'Come back tomorrow to keep your streak going.</p>':'')+
+    '<div class="kpis">'+
+      '<div class="kpi"><b>'+dc+' / '+TOTAL+'</b><span>sessions done ('+(dc/TOTAL*100).toFixed(1)+'%)</span></div>'+
+      '<div class="kpi"><b>'+words+'</b><span>words & phrases practised</span></div>'+
+      '<div class="kpi"><b>🔥 '+liveStreak()+'</b><span>day streak (best '+(P.best||0)+')</span></div>'+
+      '<div class="kpi"><b>'+esc(stage)+'</b><span>current stage</span></div>'+
+    '</div>'+
+    '<div class="small">Sessions per day, last 14 days</div>'+
+    '<div class="hist">'+days.map(function(v){return '<i class="'+(v?"":"zero")+'" style="height:'+Math.max(3,v/mx*100)+'%"></i>';}).join("")+'</div>'+
+    '<div class="small" style="margin-top:10px">All 1,000 sessions (green = done)</div><div class="grid">'+grid+'</div>'+
+    '<div class="row" style="margin-top:14px">'+
+      (justDone && P.current<TOTAL?'<button class="btn primary" id="pNext">Next session ›</button>':'')+
+      '<button class="btn" id="pClose" style="margin-left:auto">Close</button></div>';
+  show("ovProgress");
+  var pn=$("pNext"); if(pn) pn.onclick=function(){ hide("ovProgress"); go(P.current+1); };
+  $("pClose").onclick=function(){ hide("ovProgress"); render(); };
+}
+
+micNote();
+var isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+var standalone=window.navigator.standalone===true||window.matchMedia("(display-mode: standalone)").matches;
+if(isIOS && !standalone && !localStorage.getItem("mandarinSteps.tip")) $("installTip").style.display="block";
+$("bTipClose").onclick=function(){ $("installTip").style.display="none"; try{localStorage.setItem("mandarinSteps.tip","1");}catch(e){} };
+if("serviceWorker" in navigator){ window.addEventListener("load",function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); }); }
+fetch("sessions.json").then(function(r){return r.json();}).then(function(j){ DATA=j; render(); })
+  .catch(function(){ $("topic").textContent="Couldn't load lessons. Check your connection and reload."; });
+})();
+</script>
+</body>
+</html>
